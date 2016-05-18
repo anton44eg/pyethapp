@@ -345,8 +345,6 @@ def quantity_decoder(data):
         success = False
     elif not data.startswith('0x'):
         success = False  # must start with 0x prefix
-    elif len(data) > 3 and data[2] == '0':
-        success = False  # must not have leading zeros (except `0x0`)
     else:
         data = data[2:]
         # ensure even length
